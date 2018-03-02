@@ -1,0 +1,39 @@
+{
+  "name": "v-particles",
+  "description": "Particles.js plugin for Vue.js",
+  "version": "1.0.0",
+  "author": "Agustin Maidana <agustin.maidana@fing.edu.uy>",
+  "library": "vParticles",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development rollup -cw rollup.config.js",
+    "build": "cross-env NODE_ENV=production rollup -c rollup.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amsik/liquor-tree.git"
+  },
+  "module": "dist/v-particles.esm.js",
+  "main": "dist/v-particles.umd.js",
+  "keywords": [
+    "vue",
+    "vue.js",
+    "component",
+    "particles",
+    "v-particles",
+    "plugin",
+    "vue particles"
+  ],
+  "dependencies": {
+    "vue": "^2.5.13"
+  },
+  "devDependencies": {
+    "cross-env": "^5.1.3",
+    "rollup": "^0.55.5",
+    "rollup-plugin-alias": "^1.4.0",
+    "rollup-plugin-buble": "^0.19.1",
+    "rollup-plugin-serve": "^0.4.2",
+    "rollup-plugin-uglify": "^3.0.0",
+    "rollup-plugin-vue": "^3.0.0",
+    "vue-template-compiler": "^2.5.13"
+  }
+}
