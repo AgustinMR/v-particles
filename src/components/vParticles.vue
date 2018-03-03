@@ -1,5 +1,5 @@
 <template>
-   <canvas :style="{backgroundColor: background}" id="particles-container">s</canvas>
+   <canvas :style="{backgroundColor: background}" id="particles-container"></canvas>
 </template>
 <script>
    import "../lib/particles.min";
@@ -15,7 +15,7 @@
          sizeVariations: {
             type: Number,
             required: false,
-            default: 3
+            default: 4
          },
          speed: {
             type: Number,
@@ -35,7 +35,7 @@
          minDistance: {
             type: Number,
             required: false,
-            default: 77
+            default: 93
          },
          connectParticles: {
             type: Boolean,
