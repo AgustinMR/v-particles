@@ -1,13 +1,20 @@
 <template>
-   <canvas
-      id="particles-container"
-      :style="{
+   <div class="container">
+      <div>
+         <slot>
+            <div></div>
+         </slot>
+      </div>
+      <canvas
+         id="particles-container"
+         :style="{
          backgroundColor: background,
          maxHeight: height,
          maxWidth: width,
          position: position
       }"
-   ></canvas>
+      ></canvas>
+   </div>
 </template>
 <script>
    import "../lib/particles.min";
@@ -135,6 +142,12 @@
       padding: 0;
       top: 0;
       left: 0;
-      z-index: 0;
+      z-index: -1;
+   }
+
+   .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
    }
 </style>
