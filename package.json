@@ -1,7 +1,7 @@
 {
-  "name": "v-particles",
+  "name": "@agustinm/v-particles",
   "description": "Particles.js plugin for Vue.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Agustin Maidana <agustin.maidana@fing.edu.uy>",
   "library": "vParticles",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/amsik/liquor-tree.git"
+    "url": "git+https://github.com/AgustinMR/v-particles.git"
   },
   "module": "dist/v-particles.esm.js",
   "main": "dist/v-particles.umd.js",
@@ -35,5 +35,10 @@
     "rollup-plugin-uglify": "^3.0.0",
     "rollup-plugin-vue": "^3.0.0",
     "vue-template-compiler": "^2.5.13"
-  }
+  },
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "license": "MIT"
 }
