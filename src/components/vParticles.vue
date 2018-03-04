@@ -17,7 +17,8 @@
                <div></div>
             </slot>
          </div>
-         <canvas :style="{background: background}" class="header__background"></canvas>
+         <canvas :id="'particles-container-' + id" :style="{background: background}"
+                 class="header__background"></canvas>
       </div>
    </div>
 </template>
@@ -100,16 +101,21 @@
             type: String,
             required: false,
             default: 'inherit'
+         },
+         id: {
+            type: String,
+            required: false,
+            default: ''
          }
       },
       computed: {
          particles() {
-            return document.getElementsByClassName("header__background")[0].getContext("2d");
+            return document.getElementById('particles-container-' + this.id).getContext("2d");
          },
       },
       mounted() {
          Particles.init({
-            selector: '.header__background',
+            selector: '#particles-container-' + this.id,
             maxParticles: this.maxParticles,
             sizeVariations: this.sizeVariations,
             speed: this.speed,
