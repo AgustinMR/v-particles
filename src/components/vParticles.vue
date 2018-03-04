@@ -4,17 +4,17 @@
            class="header">
          <div class="header__meta">
             <slot name="header">
-               <div>header</div>
+               <div></div>
             </slot>
          </div>
          <div class="container">
             <slot name="content">
-               <div>content</div>
+               <div></div>
             </slot>
          </div>
          <div class="header__scroll">
             <slot name="footer">
-               <div>footer</div>
+               <div></div>
             </slot>
          </div>
          <canvas :style="{background: background}" class="header__background"></canvas>
