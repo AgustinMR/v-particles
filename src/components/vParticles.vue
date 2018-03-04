@@ -1,19 +1,24 @@
 <template>
-   <div class="container">
-      <div>
-         <slot>
-            <div></div>
-         </slot>
+   <div style="padding: 0" :style="{maxHeight: '100%', height: height}">
+      <div id="root" :style="{maxHeight: '100%', height: height}" style="display: flex;justify-content: center"
+           class="header">
+         <div class="header__meta">
+            <slot name="header">
+               <div>header</div>
+            </slot>
+         </div>
+         <div class="container">
+            <slot name="content">
+               <div>content</div>
+            </slot>
+         </div>
+         <div class="header__scroll">
+            <slot name="footer">
+               <div>footer</div>
+            </slot>
+         </div>
+         <canvas :style="{background: background}" class="header__background"></canvas>
       </div>
-      <canvas
-         id="particles-container"
-         :style="{
-         backgroundColor: background,
-         maxHeight: height,
-         maxWidth: width,
-         position: position
-      }"
-      ></canvas>
    </div>
 </template>
 <script>
@@ -81,21 +86,6 @@
                }
             ]
          },
-         height: {
-            type: String,
-            required: false,
-            default: 'auto',
-         },
-         width: {
-            type: String,
-            required: false,
-            default: 'auto'
-         },
-         position: {
-            type: String,
-            required: false,
-            default: 'absolute'
-         },
          scaleWidth: {
             type: Number,
             required: false,
@@ -105,16 +95,21 @@
             type: Number,
             required: false,
             default: 1
+         },
+         height: {
+            type: String,
+            required: false,
+            default: 'inherit'
          }
       },
       computed: {
          particles() {
-            return document.getElementById("particles-container").getContext("2d");
-         }
+            return document.getElementsByClassName("header__background")[0].getContext("2d");
+         },
       },
       mounted() {
          Particles.init({
-            selector: '#particles-container',
+            selector: '.header__background',
             maxParticles: this.maxParticles,
             sizeVariations: this.sizeVariations,
             speed: this.speed,
@@ -138,16 +133,61 @@
 </script>
 
 <style scoped>
-   #particles-container {
+   .container {
       padding: 0;
-      top: 0;
-      left: 0;
-      z-index: -1;
+      text-align: center;
+      top: 50%;
+      margin: 0;
+      position: absolute;
+      align-content: center;
+      align-self: center;
+      align-items: center;
    }
 
-   .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+   .header {
+      left: 0;
+      top: 0;
+      width: 100%;
+      max-width: inherit;
+      display: block;
+      position: absolute;
+   }
+
+   .header .header__background {
+      position: relative;
+      display: block;
+   }
+
+   .header .header__meta {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 10;
+   }
+
+   .header .header__meta li {
+      display: inline-block;
+   }
+
+   .header .header__meta li:after {
+      display: inline-block;
+      content: "";
+      width: 1px;
+      height: 10px;
+      margin: 0 13px 0 17px;
+      opacity: 0.46;
+   }
+
+   .header .container {
+      z-index: 10;
+   }
+
+   .header .header__scroll {
+      position: absolute;
+      width: 110px;
+      bottom: 0;
+      margin: 0;
+      text-align: center;
+      z-index: 10;
    }
 </style>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0">
    <meta charset="utf-8">
    <title>vParticles</title>
 </head>
@@ -12,7 +12,10 @@
 <script type="text/javascript">
    let app = new Vue({
       el: '#app',
-      template: '<v-particles :color="[\'#FFEFC0\', \'#5ADD94\',\'#F7F7F7\']" background="#232829"></v-particles>',
+      template: '<div style="height: 800px">\n' +
+      '   <v-particles :color="[\'#a34242\', \'#f1f5f9\',\'#3F536E\']"></v-particles>\n' +
+      '   outside de component\n' +
+      '</div>',
       data() {
          return {}
       }
