@@ -136,8 +136,7 @@
    .container {
       padding: 0;
       text-align: center;
-      top: 50%;
-      margin: 0;
+      margin-top: -15%;
       position: absolute;
       align-content: center;
       align-self: center;
