@@ -1,7 +1,7 @@
 {
    "name": "@agustinm/v-particles",
    "description": "Particles.js plugin for Vue.js",
-   "version": "1.2.4",
+   "version": "1.2.5",
    "author": "Agustin Maidana <agustin.maidana@fing.edu.uy>",
    "library": "vParticles",
    "scripts": {
